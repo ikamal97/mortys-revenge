@@ -1,7 +1,4 @@
 ; #########################################################################
-;
-;   game.asm - Assembly file for EECS205 Assignment 4/5
-;
 ;	Name: Idrees Kamal
 ; #########################################################################
 
@@ -50,7 +47,7 @@ GameInit PROC
 	rdtsc
 	invoke nseed, eax
 	invoke InitMortys
-	invoke PlaySound, offset titleMusic, 0, SND_FILENAME OR SND_ASYNC OR SND_LOOP
+	invoke PlaySound, offset gameMusic, 0, SND_FILENAME OR SND_ASYNC OR SND_LOOP
 	ret         ;; Do not delete this line!!!
 GameInit ENDP
 
@@ -62,8 +59,8 @@ GamePlay PROC
 	je DisplayTitle
 	cmp INSTRUCTIONS, 1
 	je DisplayInstructions
-	cmp GAMEMUSIC, 0
-	je PlayGameMusic
+	;cmp GAMEMUSIC, 0
+	;je PlayGameMusic
 
 	; Clear Screen
 	invoke ClearScreenBG
