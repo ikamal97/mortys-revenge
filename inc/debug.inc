@@ -1,0 +1,1 @@
+WriteInt PROTO input:DWORD
